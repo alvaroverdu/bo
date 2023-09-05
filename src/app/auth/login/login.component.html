@@ -1,0 +1,44 @@
+    <style>
+/* Estilos para el botón y los inputs */
+.custom-button, .custom-input-text, .custom-input-password {
+      width: 100%;
+      padding: 15px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+    }
+
+    .custom-button {
+      background-color: #3498db;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .custom-button:hover {
+      background-color: #2980b9;
+    }
+
+    .custom-input-text, .custom-input-password {
+      background-color: #ecf0f1;
+    }
+
+    .custom-input-text:focus, .custom-input-password:focus {
+      outline: none;
+      box-shadow: 0 0 5px #3498db;
+    }
+    </style>
+    
+    
+    <form (ngSubmit)="login()" [formGroup]="loginForm">
+        <input type="text" class="custom-input-text" formControlName="username" placeholder="Username" required>
+        <input type="password" class="custom-input-password" formControlName="password" placeholder="Password" required>
+        <button type="submit" class="custom-button" type="submit">Login</button>
+    </form>
+
+    <div class="row">
+        <div class="col">
+            <p class="text-danger" *ngIf="!campoValido('username')">El campo username es obligatorio</p>
+            <p class="text-danger" *ngIf="!campoValido('password')">El campo password es obligatorio</p>
+        </div>
+    </div>

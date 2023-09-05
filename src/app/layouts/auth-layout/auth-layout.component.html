@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page</title>
+  <style>
+ /* Estilos generales */
+ body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(to right, #3498db, #2ecc71);
+      font-family: 'Arial', sans-serif;
+    }
+
+    /* Contenedor principal que ocupa toda la pantalla */
+    .custom-auth-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    /* Caja de inicio de sesión */
+    .custom-auth-box {
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 30px;
+      width: 350px;
+      text-align: center;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      color: #333;
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="custom-auth-wrapper">
+    <div class="custom-auth-box">
+      <h1>Login</h1>
+        <router-outlet></router-outlet>
+    </div>
+  </div>
+
+</body>
+</html>
