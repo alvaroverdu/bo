@@ -7,7 +7,6 @@ import { SidebarComponent } from '../commons/sidebar/sidebar.component';
 import { NavbarComponent } from '../commons/navbar/navbar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
-import { BreadcrumbComponent } from '../commons/breadcrumb/breadcrumb.component';
 import { UsuarioComponent } from './usuario/usuario.component';
 import { ReportesComponent } from './reportes/reportes.component';
 import { ReporteComponent } from './reporte/reporte.component';
@@ -21,7 +20,6 @@ import { ReporteComponent } from './reporte/reporte.component';
     NavbarComponent,
     DashboardComponent,
     UsuariosComponent,
-    BreadcrumbComponent,
     UsuarioComponent,
     ReportesComponent,
     ReporteComponent

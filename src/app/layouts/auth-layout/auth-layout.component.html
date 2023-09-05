@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <title>Login Page</title>
   <style>
- /* Estilos generales */
- body, html {
+    /* Estilos generales */
+    body, html {
       margin: 0;
       padding: 0;
       height: 100%;
       width: 100%;
-      background: linear-gradient(to right, #3498db, #2ecc71);
-      font-family: 'Arial', sans-serif;
+      background: #fafafa; /* Un fondo claro y limpio */
+      font-family: 'Helvetica Neue', Arial, sans-serif;
     }
 
     /* Contenedor principal que ocupa toda la pantalla */
@@ -20,21 +20,30 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
+      background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%); /* Un gradiente moderno */
     }
 
     /* Caja de inicio de sesión */
     .custom-auth-box {
-      background-color: #fff;
-      border-radius: 12px;
-      padding: 30px;
-      width: 350px;
+      background: rgba(255, 255, 255, 0.9); /* Semi-transparencia para ver el gradiente de fondo */
+      border-radius: 20px; /* Esquinas más redondeadas */
+      padding: 40px;
+      width: 400px;
       text-align: center;
-      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      box-shadow: 0 14px 28px rgba(0,0,0,0.1), 0 10px 10px rgba(0,0,0,0.1); /* Sombra más suave y grande */
+      transition: all 0.3s ease; /* Transición suave para todo */
     }
 
+    .custom-auth-box:hover {
+      box-shadow: 0 16px 32px rgba(0,0,0,0.2), 0 10px 10px rgba(0,0,0,0.1); /* Sombra más grande al pasar el cursor */
+    }
+
+    /* Título */
     h1 {
       color: #333;
-      font-size: 24px;
+      font-size: 32px;
+      font-weight: 300; /* Más delgado para un look moderno */
+      margin-bottom: 20px;
     }
   </style>
 </head>
@@ -43,7 +52,7 @@
   <div class="custom-auth-wrapper">
     <div class="custom-auth-box">
       <h1>Login</h1>
-        <router-outlet></router-outlet>
+      <router-outlet></router-outlet>
     </div>
   </div>
 

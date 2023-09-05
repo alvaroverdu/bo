@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Usuario } from 'src/app/models/usuario.model';
 
 @Component({
   selector: 'app-usuarios',
@@ -6,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./usuarios.component.css']
 })
 export class UsuariosComponent {
+
+  public listaUsuarios: Usuario[] = [];
+
+  public loading = true;
+
+
+  
+
+
 
 }

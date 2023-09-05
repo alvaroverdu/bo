@@ -25,27 +25,37 @@ export class LoginComponent {
 
   }
 
-  login(){
+  login() {
     this.formSubmit = true;
     console.log(this.loginForm);
-    if(!this.loginForm.valid){
+  
+    if (!this.loginForm.valid) {
       console.log('Error');
+      return;
     }
+  
     this.usuarioService.login(this.loginForm.value)
-    .subscribe(res =>{
-      console.log('Respuesta al subscribe',res);
-      this.router.navigateByUrl('/dashboard')
-    }, (err) => {
-      console.warn('Error respuesta')
-      Swal.fire({
-        title: 'Error!',
-        text: 'Usuario o contraseña incorrectos',
-        icon: 'error',
-        confirmButtonText: 'Ok'
-
-      })
-    }) ;
+      .subscribe((res:any) => {
+        console.log('Respuesta al subscribe', res);
+        
+        // Supongamos que el token se encuentra en res.token
+        // Almacenamos el token en el Local Storage
+        if (res && res.token) {
+          localStorage.setItem('token', res.token);
+        }
+        console.log(res.token);
+        this.router.navigateByUrl('/dashboard');
+      }, (err) => {
+        console.warn('Error respuesta');
+        Swal.fire({
+          title: 'Error!',
+          text: 'Usuario o contraseña incorrectos',
+          icon: 'error',
+          confirmButtonText: 'Ok'
+        });
+      });
   }
+  
 
   campoValido( campo: string){
     return this.loginForm.get(campo)?.valid || !this.formSubmit;
