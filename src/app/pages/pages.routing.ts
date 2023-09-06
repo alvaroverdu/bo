@@ -6,6 +6,8 @@ import { AdminLayoutComponent } from 'src/app/layouts/admin-layout/admin-layout.
 import { DashboardComponent } from 'src/app/pages/dashboard/dashboard.component';
 import { UsuariosComponent } from 'src/app/pages/usuarios/usuarios.component';
 import { ReportesComponent } from './reportes/reportes.component';
+import { UsuarioComponent } from './usuario/usuario.component';
+import { ReporteComponent } from './reporte/reporte.component';
 
 
 
@@ -15,7 +17,9 @@ const routes: Routes = [
     children: [
     {path: '',component: DashboardComponent},    
     {path: 'usuarios',component: UsuariosComponent},
+    {path: 'usuarios/usuario/:id',component: UsuarioComponent},
     {path: 'reportes',component: ReportesComponent},
+    {path: 'reportes/reporte/:id',component: ReporteComponent},
     {path: '**', redirectTo: ''}      
     ]
 

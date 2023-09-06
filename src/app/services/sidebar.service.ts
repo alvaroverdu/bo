@@ -9,7 +9,7 @@ export class SidebarService {
 
   menuAdmin: sidebarItem[] =[
     { titulo: 'Dashboard Admin', icono: 'fa fa-tachometer-alt', sub: false, url: '/dashboard'},
-    { titulo: 'Gestión usuarios', icono: 'fa fa-users', sub: false, url: '/dashboard/usuarios'},
+    //{ titulo: 'Gestión usuarios', icono: 'fa fa-users', sub: false, url: '/dashboard/usuarios'},
     { titulo: 'Gestión reportes', icono: 'fa fa-flag', sub: false, url: '/dashboard/reportes'},
 
   ];

@@ -1,13 +1,16 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http'
+import {HttpClient,HttpHeaders} from '@angular/common/http'
 import { loginForm } from '../interfaces/login-form-interface';
 import { enviroment } from '../../enviroments/enviroments'
 import { Router } from '@angular/router';
+import { Usuario } from '../models/usuario.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsuarioService {
+
+  endpoint = enviroment.base_url + '/professionals';
 
   constructor(private http: HttpClient,
               private router: Router) { }
@@ -33,13 +36,17 @@ export class UsuarioService {
     } else {
       return true;
     }
+  }
 
-    
+  getProfessionalById(id: string): any {
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${this.token}` 
+    });
+    return this.http.get<Usuario>(`${this.endpoint}/${id}`,{headers});
+  }
 
-
-
-    //this.http.post(enviroment.base_url + '')
-
+  get token(): string {
+    return localStorage.getItem('token') || '';
   }
 
 

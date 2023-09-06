@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 import { AdminLayoutComponent } from '../layouts/admin-layout/admin-layout.component';
 import { SidebarComponent } from '../commons/sidebar/sidebar.component';
@@ -22,10 +23,11 @@ import { ReporteComponent } from './reporte/reporte.component';
     UsuariosComponent,
     UsuarioComponent,
     ReportesComponent,
-    ReporteComponent
+    ReporteComponent,
   ],
   imports: [
-    CommonModule,RouterModule
+    CommonModule,RouterModule,FormsModule
+
   ]
 })
 export class PagesModule { }

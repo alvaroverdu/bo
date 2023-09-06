@@ -6,9 +6,11 @@ export class Reporte {
         public comments: string,
         public result: number,
         public status: number,
-        public managed_by: number,
-        public reported_user: number,
-        public reporter_user:number
+        public managedById: number,
+        public reportedUserId: number,
+        public reporterUserId:number,
+        public createdAt: string,
+        public updatedAt: string
     ) {}
 
 }
