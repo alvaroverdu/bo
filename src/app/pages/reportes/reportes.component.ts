@@ -14,6 +14,13 @@ export class ReportesComponent {
 
   public loading = true;
 
+  public searchParams = {
+    reportedUserId: undefined,
+    reporterUserId: undefined,
+    startDate: undefined,
+    status: undefined
+  }
+
 
   constructor( private reporteService: ReporteService){}
 
@@ -24,14 +31,21 @@ export class ReportesComponent {
 
 
   cargarReportes(){
-    this.reporteService.cargarReportes()
+    this.reporteService.cargarReportes(this.searchParams)
     .subscribe(res => {
-      this.cargarReportes();
+      console.log(res);
+      this.listaReportes = res;
+      this.loading = false;
+      
     }, (error) => {
       Swal.fire({icon: 'error', title: 'Oops...', text: 'No se pudo completar la acción, vuelva a intentarlo',});
         //console.warn('error:', err);
         this.loading = false;
     });
+  }
+
+  resolverReporte(){
+    
   }
 
 }
