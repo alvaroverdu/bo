@@ -24,8 +24,8 @@ export class ReporteService {
     if(searchParams){
       if (searchParams.reportedUserId) params = params.append('reportedUserId', searchParams.reportedUserId);
       if (searchParams.reporterUserId) params = params.append('reporterUserId', searchParams.reporterUserId);
-      if (searchParams.startDate) params = params.append('startDate', searchParams.startDate);
-      if (searchParams.status) params = params.append('status', searchParams.startDate);
+      if (searchParams.status) params = params.append('status', searchParams.status);
+      if (searchParams.startDate) params = params.append('orders', searchParams.startDate);
   
     }
 

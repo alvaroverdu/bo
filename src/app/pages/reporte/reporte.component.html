@@ -11,7 +11,7 @@
             <p class="card-text"><strong>ID:</strong> {{ reporte?.id }}</p>
             <p class="card-text"><strong>Motivos del reporte:</strong> {{ reporte?.reason }}</p>
             <p class="card-text"><strong>Comentarios:</strong> {{ reporte?.comments ?? 'POR DEFINIR'}}</p>
-            <p class="card-text"><strong>Fecha de creación:</strong> {{ reporte?.createdAt | date:'medium' }}</p>
+            <p class="card-text"><strong>Fecha de creación:</strong> {{ reporte?.createdAt | date:'dd-MM-yyyy' }}</p>
             <p class="card-text"><strong>ID de Usuario reportante:</strong> {{ reporte?.reportedUserId }}</p>
             <p class="card-text"><strong>ID de administrador:</strong> {{ reporte?.managedById  ?? 'POR DEFINIR'}}</p>
             <p class="card-text"><strong>Resultado:</strong> {{ reporte?.result ?? 'POR DEFINIR' }}</p>

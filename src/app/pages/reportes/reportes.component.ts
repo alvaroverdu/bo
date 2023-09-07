@@ -31,6 +31,7 @@ export class ReportesComponent {
 
 
   cargarReportes(){
+    console.log(this.searchParams);
     this.reporteService.cargarReportes(this.searchParams)
     .subscribe(res => {
       console.log(res);
@@ -44,8 +45,16 @@ export class ReportesComponent {
     });
   }
 
-  resolverReporte(){
-    
+  limpiarFiltro(){
+    this.searchParams = {
+      reportedUserId: undefined,
+      reporterUserId: undefined,
+      startDate: undefined,
+      status: undefined
+    };
+    this.cargarReportes();
+
   }
+
 
 }

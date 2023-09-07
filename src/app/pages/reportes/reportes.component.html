@@ -1,3 +1,53 @@
+<div class="row">
+    <div class="col-sm-3">
+        <!-- Campo de filtro para reportedUserId -->
+        <div class="form-group">
+            <label for="reportedUserId">Usuario reportado:</label>
+            <input type="text" id="reportedUserId" class="form-control" [(ngModel)]="searchParams.reportedUserId" placeholder="ID del usuario reportado">
+        </div>
+    </div>
+
+    <div class="col-sm-3">
+        <!-- Campo de filtro para reporterUserId -->
+        <div class="form-group">
+            <label for="reporterUserId">Usuario reportante:</label>
+            <input type="text" id="reporterUserId" class="form-control" [(ngModel)]="searchParams.reporterUserId" placeholder="ID del usuario reportante">
+        </div>
+    </div>
+
+    <div class="col-sm-3">
+        <!-- Campo de filtro para status -->
+        <div class="form-group">
+            <label for="status">Estado del reporte:</label>
+            <select id="status" class="form-control" [(ngModel)]="searchParams.status">
+                <option value="">Todos</option>
+                <option value="0">Pendiente</option>
+                <option value="1">En progreso</option>
+                <option value="2">Resuelto</option>
+                <!-- Puedes agregar más estados si es necesario -->
+            </select>
+        </div>
+    </div>
+
+    <div class="col-sm-3">
+        <!-- Campo de filtro para startDate -->
+        <div class="form-group">
+            <label for="startDate">Ordenar por fecha:</label>
+            <select id="status" class="form-control" [(ngModel)]="searchParams.startDate">
+                <option value="createdAt ASC">Fecha ascendente</option>
+                <option value="createdAt DESC">Fecha descendente</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<div class="row mb-3">
+    <div class="col-12 justify-content-center">
+        <button class="btn btn-primary" (click)="cargarReportes()">Aplicar Filtros</button>
+        <button class="btn btn-danger ml-3" (click)="limpiarFiltro()">Limpiar Filtro</button>
+    </div>
+</div>
+
 <div class="row animate__animated animate__fadeIn animate__faster">
     <div class="col-12">
         <div class="card">
@@ -45,7 +95,7 @@
                                 <td>{{reporte.reporterUserId}}</td>
                                 <td>{{reporte.reportedUserId}}</td>
                                 <td>{{reporte.reason}}</td>
-                                <td>{{reporte.createdAt}}</td>
+                                <td>{{reporte.createdAt | date: 'E dd-MM-yyyy a HH:mm:ss'}}</td>
                                 <td>{{reporte.status}}</td>
                                 <td class="text-center">
                                     <i class="fa fa-pencil-alt text-success fa-lg mr-5 micursor" [routerLink]="['/dashboard/reportes/reporte', reporte.id]"></i>
